@@ -14,14 +14,14 @@ const AvailableMeals = () => {
     const fetchMeals = async () => {
       try {
         const response = await fetch(
-          "https://react-http-b5b2d-default-rtdb.firebaseio.com/meals.json"
+          "https://reactmeals-34cac-default-rtdb.firebaseio.com/meals.json"
         );
 
         if (!response.ok) {
           throw new Error("Something went wrong!!");
         }
         const responseData = await response.json();
-
+        console.log(responseData);
         const loadedMeals = [];
         for (const key in responseData) {
           loadedMeals.push({
